@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phacaraphon ❤️ Naphatsorn</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:linear-gradient(180deg,#0b1026,#1d2b64,#4b2e83);
+            color:white;
+            text-align:center;
+            overflow-x:hidden;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            padding:30px 20px;
+        }
+
+        h1{
+            font-size:42px;
+            margin-top:30px;
+        }
+
+        .heart{
+            color:#ff4d88;
+            animation:beat 1s infinite;
+        }
+
+        @keyframes beat{
+            50%{
+                transform:scale(1.2);
+            }
+        }
+
+        p{
+            margin-top:15px;
+            line-height:1.8;
+            font-size:18px;
+        }
+
+        .count{
+            margin-top:30px;
+            font-size:28px;
+            font-weight:bold;
+            color:#ffd6e8;
+        }
+
+        img{
+            width:100%;
+            border-radius:20px;
+            margin-top:25px;
+        }
+
+        button{
+            margin-top:30px;
+            padding:15px 35px;
+            border:none;
+            border-radius:40px;
+            background:#ff4d88;
+            color:white;
+            font-size:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Phacaraphon <span class="heart">❤️</span> Naphatsorn</h1>
+
+<p>
+สุขสันต์วันครบรอบ 1 ปี 4 เดือนนะคร้าบบ 💖
+</p>
+
+<div class="count" id="timer">
+กำลังนับเวลาความรัก...
+</div>
+
+</div>
+
+<script>
+
+const start=new Date("2025-03-03T00:00:00");
+
+function update(){
+
+let now=new Date();
+
+let diff=now-start;
+
+let days=Math.floor(diff/1000/60/60/24);
+
+document.getElementById("timer").innerHTML=
+"เราคบกันมา "+days+" วัน ❤️";
+
+}
+
+update();
+
+setInterval(update,1000);
+
+</script>
+
+</body>
+</html>
