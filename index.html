@@ -114,7 +114,23 @@
         opacity:1;
         transform:translateY(0);
     }
-}    </style>
+} .heart-float{
+    position:fixed;
+    font-size:30px;
+    animation:floatUp 3s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-300px);
+        opacity:0;
+    }
+}   </style>
 </head>
 
 <body>
@@ -170,7 +186,32 @@ update();
 
 setInterval(update,1000);
 function surprise(){
+
     document.getElementById("secret").style.display="block";
+
+    for(let i=0;i<25;i++){
+
+        let heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+
+        heart.className="heart-float";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.top="80vh";
+
+        heart.style.animationDelay=(Math.random()*1)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },3000);
+
+    }
+
+}
 }
 </script>
 
