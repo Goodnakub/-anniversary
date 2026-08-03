@@ -124,7 +124,13 @@
 <div class="count" id="timer">
 กำลังนับเวลาความรัก...
 </div>
+<button onclick="surprise()">
+กดดูข้อความพิเศษ 💖
+</button>
 
+<p id="secret" style="display:none;">
+ขอบคุณที่เข้ามาเป็นความสุขในชีวิตนะ ❤️
+</p>
 </div>
 
 <script>
@@ -147,7 +153,9 @@ document.getElementById("timer").innerHTML=
 update();
 
 setInterval(update,1000);
-
+function surprise(){
+    document.getElementById("secret").style.display="block";
+}
 </script>
 
 </body>
